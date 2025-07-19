@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://quwamportfolio.netlify.app/
+
+# Sitemaps
+Sitemap: https://quwamportfolio.netlify.app/sitemap.xml
