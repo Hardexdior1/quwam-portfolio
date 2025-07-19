@@ -21,9 +21,10 @@ openGraph: {
     ],
     type: "website",
   },
-  verification: {
-    google: 'arRF-HuOQMxY7TDg-ekXNyeKPfT7M2C635-cBCwVczM',
-  },
+  other: {
+    'google-site-verification': 'tF0Tx3i4j-4v6gFmL7YT02j6dMeVkA-_XxEfHSVAS0E',
+  }, 
+  
    twitter: {
     card: "summary_large_image",
     title: "Quwam Adeniran",
