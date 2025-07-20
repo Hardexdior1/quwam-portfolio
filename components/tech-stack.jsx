@@ -2,16 +2,23 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import { Atom, Globe, Type, Palette, Move, Server, Network, Database, Mail } from "lucide-react"
+import { Atom, Globe, Server, Network, Database, Mail, 
+  Code,
+  Paintbrush,
+  FlaskConical, } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+
+
+
 
 const frontendStack = [
   { name: "React.js", description: "UI Library", icon: Atom },
   { name: "Next.js", description: "SSR, Routing, SEO", icon: Globe },
-  { name: "JavaScript", description: "Dynamic Web Content", icon: Type }, // Changed from TypeScript
-  { name: "Tailwind CSS", description: "Utility-first styling", icon: Palette },
-  { name: "Framer Motion", description: "UI animations", icon: Move },
-]
+  { name: "JavaScript", description: "Dynamic Web Content", icon: Code },
+  { name: "Tailwind CSS", description: "Utility-first styling", icon: Paintbrush },
+  { name: "Postman & Thunder Client", description: "Tools for API testing and debugging", icon: FlaskConical },
+];
+
 
 const backendStack = [
   { name: "Node.js", description: "JavaScript Runtime", icon: Server },

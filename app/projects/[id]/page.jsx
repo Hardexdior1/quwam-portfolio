@@ -8,7 +8,7 @@ import ImageCarousel from "@/components/image-carousel"
 
 const projectsData = {
   "verseone-hotel": {
-        nb:"NB:the backend is hosted on a free plan,so it might take some seconds before it responds when you try to login for the first time. and'd please don't upload any room from the admin page",
+        nb:"NB:the backend is hosted on a free plan,so it might take some seconds before it responds when you try to login for the first time. and please don't upload any room from the admin page",
     title: "VerseOne Hotel - Full-Stack Booking Platform",
     category: "Full-Stack Platform",
     description: "Complete hotel booking platform with admin dashboard, payment integration, and email notifications.",

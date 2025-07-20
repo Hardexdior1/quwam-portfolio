@@ -4,32 +4,34 @@ import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
 import Image from "next/image"
+import Link from "next/link"
 const experiences = [
   {
     company: "Ojutu Inc",
+    url:"https://www.linkedin.com/company/ojutu-co/",
     img:"https://media.licdn.com/dms/image/v2/D4D0BAQF2QBLpeg-GWQ/company-logo_200_200/company-logo_200_200/0/1708443260137/ojutu_co_logo?e=1755734400&v=beta&t=CiG1DWBc-T7u7mF7SMOpPcIFSLUP948wgyln39EBa9g",
     role: "Frontend Developer",
     period: "August 2024 – July 2025",
-    description:
-      "Building and optimizing production-grade applications using React and Next.js. Contributed to multiple platforms including an EdTech app and a real estate solution for students to browse nearby rental listings. Collaborating with backend engineers and designers to implement full user flows.",
+    description:"A software development agency, contributed to building and optimizing production-grade applications including an EdTech platform, HealthTech platform, and SaaS solutions using React/Next.js. Collaborated with backend engineers and designers to implement full user flows",
   },
   {
     company: "Efortlex Limited",
+    url:"https://www.linkedin.com/company/efortlexafrica.ng/posts/",
     img:"https://media.licdn.com/dms/image/v2/D4D0BAQHI90zSxE8yqQ/company-logo_200_200/company-logo_200_200/0/1698392921291?e=1755734400&v=beta&t=ej9sI1RZIFDKiGxXbXgk5ivN191J9SP0jTyWUz8KBkg",
     role: "Frontend Developer Intern",
     period: "April 2024 – August 2024",
     description:
-      "Built and maintained a property listing platform connecting tenants (mostly students) with landlords based on location proximity. Learned to integrate real API endpoints, manage component state, and transform wireframes into production-ready UIs.",
+      "Built and maintained a property listing platform connecting tenants (mostly students) with landlords based on location proximity. Learned to integrate real API endpoints, manage component state, and transform figma into production-ready UIs.",
   },
   {
     company: "Loyalty Solutions",
+    url:"https://www.linkedin.com/company/loyalty-solutions-nigeria/posts/?feedView=all",
         img:"https://media.licdn.com/dms/image/v2/D4D0BAQHu8-Zc2rd-zw/img-crop_100/img-crop_100/0/1736524772356?e=1755734400&v=beta&t=PZOtkhW-5YIf5vrRiFr-0Ehxh1j33vCfnh89GIqq7Sw",
 
     role: "Frontend Developer (Contract)",
     period: "February 2024 – April 2024",
     description:
-      "Developed UI components and dashboards for a loyalty program platform. Implemented dynamic reward logic and handled third-party API integrations. Focused on mobile responsiveness and usability across devices.",
-  },
+      "Developed UI components and dashboards for a loyalty program platform. Implemented dynamic reward logic and handled  API integrations."}
 ]
 
 export default function Experience() {
@@ -67,15 +69,26 @@ export default function Experience() {
                       animate={isInView ? { scale: 1 } : { scale: 0 }}
                       transition={{ duration: 0.4, delay: index * 0.2 + 0.3 }}
                       className="absolute left-4 md:left-auto md:right-0 w-3 h-3 bg-black rounded-full transform -translate-x-1/2 md:translate-x-1/2"
-                    ></motion.div> */}
+                    >  */}
+                    
+                    {/* </motion.div> */}
                     <div className="ml-12 md:ml-0 md:text-right">
-                      <h3 className="text-xl font-bold text-black">{exp.company}</h3>
+<Link href={exp.url} target="_blank">
+  <h3 className="text-xl font-bold text-blue-600 border-b border-gray-300 cursor-pointer hover:text-blue-800 hover:underline transition-all duration-200">
+    {exp.company}
+  </h3>
+</Link>
+
                       <p className="text-lg text-gray-600 font-medium">{exp.role}</p>
                       <p className="text-sm text-gray-500">{exp.period}</p>
                     </div>
                   </div>
                 </div>
                 <div className="md:w-1/2 md:pl-8">
+                <Link href={exp.url} target="_blank">
+                 <Image src={exp.img} alt={exp.company} height={40} width={40} />
+
+</Link>
                   <div className="ml-12 md:ml-0">
                     <p className="text-gray-700 leading-relaxed">{exp.description}</p>
                   </div>

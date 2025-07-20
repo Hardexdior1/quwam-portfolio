@@ -17,13 +17,34 @@ export default function Contact() {
 
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
+const [submitting,setSubmitting]=useState(false)
+ const handleSubmit = async (e) => {
+  e.preventDefault();
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log("Form submitted:", formData)
-    alert("Thank you for your message! I'll get back to you soon.")
-    setFormData({ name: "", email: "", message: "" })
+ 
+  try {
+    setSubmitting(true)
+   
+const res = await fetch("https://doctor-backend-x7dv.onrender.com/api/contact-for-my-portfolio", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(formData),
+});
+
+    if (!res.ok) throw new Error("Message failed");
+
+    alert("Thanks for reaching out!");
+    setSubmitting(false)
+    setFormData({ name: "", email: "", message: "" });
+  } catch (error) {
+    console.error(error);
+    setSubmitting(false)
+    alert("Something went wrong. Please try again.");
   }
+};
+
 
   return (
     <section className="py-20 bg-white">
@@ -40,8 +61,8 @@ export default function Contact() {
 
         <div className="grid md:grid-cols-2 gap-12">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h3 className="text-2xl font-bold text-black mb-6">Let's Work Together</h3>
@@ -59,8 +80,8 @@ export default function Contact() {
               ].map(({ icon: Icon, text }, index) => (
                 <motion.div
                   key={text}
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                   transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
                   className="flex items-center space-x-3"
                 >
@@ -72,8 +93,8 @@ export default function Contact() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <Card className="border-2 border-gray-200">
@@ -114,9 +135,10 @@ export default function Contact() {
                   <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                     <Button
                       type="submit"
+                      disabled={submitting}
                       className="w-full bg-black text-white hover:bg-gray-800 transition-all duration-300 hover:shadow-lg"
                     >
-                      Send Message
+                    {submitting?'sending..':'Send Message'}
                     </Button>
                   </motion.div>
                 </form>

@@ -7,8 +7,6 @@ import { Badge } from "@/components/ui/badge"
 import { ExternalLink, Eye } from "lucide-react"
 import { motion, useInView } from "framer-motion"
 import Link from "next/link"
-import ProjectModal from "./project-modal"
-import ImageSearch from "./image-search"
 
 const projects = [
   {
@@ -108,13 +106,7 @@ const projects = [
       "Clear service descriptions and pricing structure",
       "Custom plan & budget form for unique requirements",
     ],
-    images: [
-      "/placeholder.svg?height=400&width=800&text=SparkleClean+Homepage",
-      "/placeholder.svg?height=400&width=800&text=Services+Section",
-      "/placeholder.svg?height=400&width=800&text=About+Section",
-      "/placeholder.svg?height=400&width=800&text=Contact+Form",
-      "/placeholder.svg?height=400&width=800&text=Pricing+Plans",
-    ],
+   
   },
   {
     id: "fin-ai",
@@ -144,13 +136,7 @@ const projects = [
       "Simple, visually engaging feature explanations",
       "Conversion-optimized layout and CTAs",
     ],
-    images: [
-      "/placeholder.svg?height=400&width=800&text=FIN-ai+Landing+Page",
-      "/placeholder.svg?height=400&width=800&text=Features+Section",
-      "/placeholder.svg?height=400&width=800&text=Testimonials",
-      "/placeholder.svg?height=400&width=800&text=Pricing+Section",
-      "/placeholder.svg?height=400&width=800&text=FAQ+Section",
-    ],
+   
   },
 ]
 
@@ -330,10 +316,7 @@ export default function Projects() {
         </div>
       </div>
 
-      {/* Modals */}
-      {selectedProject && <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />}
-
-      {showImageSearch && <ImageSearch onClose={() => setShowImageSearch(false)} />}
+    
     </section>
   )
 }

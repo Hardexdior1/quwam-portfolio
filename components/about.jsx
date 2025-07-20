@@ -52,7 +52,7 @@ export default function About() {
             className="text-lg leading-relaxed"
           >
             When I'm not coding or improving my skills, I'm often exploring how people lived before the presidential or
-            parliamentary eras — diving into the history of rulers, wars, betrayals, and notable figures. I also enjoy
+            parliamentary eras, diving into the history of rulers, wars, betrayals, and notable figures. I also enjoy
             watching scenes from Game of Thrones, drawn to its rich storytelling, political intrigue, and medieval
             atmosphere.
           </motion.p>

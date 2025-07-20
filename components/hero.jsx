@@ -48,19 +48,7 @@ export default function Hero() {
             </Button>
           </motion.div>
 
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="border-black text-black hover:bg-gray-50 bg-transparent transition-all duration-300 hover:shadow-md"
-            >
-              <Link href="/resume.pdf" download>
-                <Download className="w-4 h-4 mr-2" />
-                Download Resume
-              </Link>
-            </Button>
-          </motion.div>
+        
         </motion.div>
 
         <motion.div
