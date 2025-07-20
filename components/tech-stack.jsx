@@ -45,22 +45,22 @@ export default function TechStack() {
         </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-12">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
+         <motion.div
+            initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
           >
             <Card className="border-2 border-gray-200 h-full">
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-black">Frontend</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                {frontendStack.map((tech, index) => (
+                {frontendStack.map((tech,index) => (
                   <motion.div
                     key={tech.name}
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                    transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                    transition={{ duration: 0.5, delay: index * 0.2   }}
                     className="flex items-center space-x-4"
                   >
                     <div className="p-2 bg-gray-100 rounded-md">
@@ -77,21 +77,21 @@ export default function TechStack() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            transition={{ duration: 0.6, delay: 0.3, }}
           >
             <Card className="border-2 border-gray-200 h-full">
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-black">Backend & Other Tools</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                {backendStack.map((tech, index) => (
+                {backendStack.map((tech,index) => (
                   <motion.div
                     key={tech.name}
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                    transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                    transition={{ duration: 0.5, delay: index * 0.2  }}
                     className="flex items-center space-x-4"
                   >
                     <div className="p-2 bg-gray-100 rounded-md">
