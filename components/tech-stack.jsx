@@ -47,7 +47,7 @@ export default function TechStack() {
         <div className="grid md:grid-cols-2 gap-12">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <Card className="border-2 border-gray-200 h-full">

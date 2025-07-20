@@ -56,8 +56,8 @@ export default function Experience() {
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+              initial={{ opacity: 0, y: index % 2 === 0 ? 50 : 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: index % 2 === 0 ? 50 : 50 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               className="relative mb-12 md:mb-16"
             >
