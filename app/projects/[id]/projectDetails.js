@@ -40,7 +40,7 @@ return <main>
     allowFullScreen
   ></iframe>
 
-<div className="flex justify-end px-4">
+<div className="flex justify-end px-5">
       <button  variant="outline" className="my-8 bg-white text-black stickey px-4 py-1 rounded" onClick={toggleDemo}>
             Close 
         </button>
