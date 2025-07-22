@@ -47,8 +47,8 @@ const projectsData = {
       // admin: { email: "admin@gmail.com", password: "admin" },
     },
     video:true,
-    src:'/verseone.mp4',
-    poster:"/hotelhero.PNG",
+src: "https://player.vimeo.com/video/1103335430",
+    
     hasliveLink:true,
     collaboration:
       "I built the complete frontend while collaborating with a backend developer who handled Node.js and MongoDB implementation. This project showcases my ability to work effectively in a team environment and integrate with backend APIs.",
@@ -85,8 +85,8 @@ const projectsData = {
 
     ],
     video:true,
-    src:'/healtcare.mp4',
-    poster:"/appoint.png",
+    src: "https://player.vimeo.com/video/1103341308", 
+
     challenges: [
       {
         problem: "Managing different user roles and permissions across the platform",

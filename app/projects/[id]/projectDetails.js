@@ -15,21 +15,42 @@ setShowDemo(!showDemo)
               document.getElementById("demo-video")?.scrollIntoView({ behavior: 'smooth' });
 
 }
+
 return <main>
-<div className="min-h-screen bg-white border" id="demo-video">
-     <div className={`max-w-4xl mx-auto p-5 md:p-0 mt-5 ${showDemo?`block`:`hidden`}`}>
-       <video muted    poster={project.poster} controls>
-  <source src={project.src} type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
-<div className="flex justify-end"> <button className="bg-black text-white hover:bg-gray-800 mt-4 rounded-md px-3 py-1" onClick={toggleDemo}>close</button>
+    {/* https://player.vimeo.com/video/ */}
+<div  className="max-w-4xl mx-auto px-6 py-12 min-h-screen bg-white border" id="demo-video">
+   
+ 
+<div
+  className=" bg-black mb-2 mx-auto p-5 md:p-0 mt-5"
+  style={{
+    visibility: showDemo ? 'visible' : 'hidden',
+    height: showDemo ? 'auto' : 0,
+    overflow: 'hidden',
+  }}
+>
+  <iframe
+    src={project.src}
+    width="100%"
+    // height="400"
+    frameBorder="0"
+      className="w-full  md:h-[400px]"
+
+    allow="autoplay; fullscreen"
+    allowFullScreen
+  ></iframe>
+
+<div className="flex justify-end px-4">
+      <button  variant="outline" className="my-8 bg-white text-black stickey px-4 py-1 rounded" onClick={toggleDemo}>
+            Close 
+        </button>
 </div>
-     </div>
+</div>
 
 
 
-      <div className="max-w-4xl mx-auto px-6 py-12">
-        <Button asChild variant="outline" className="mb-8 bg-transparent stickey">
+      <div >
+        <Button asChild variant="outline" className="mb-8 bg-black text-white stickey">
           <Link href="/#projects">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Projects
