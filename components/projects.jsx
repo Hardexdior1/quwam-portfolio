@@ -55,6 +55,7 @@ const projects = [
     liveUrl: "https://medipluss-fullstack.netlify.app",
     type: "fullstack",
     featured: true,
+    notLive:true,
     fullDescription: `A fully responsive healthcare web application that enables clinics to manage doctors, appointments, patient reviews, and blog content from a central dashboard.`,
     features: [
       "Role-based Authentication: Admin, Doctors, and Patients",
@@ -156,8 +157,7 @@ const funProjects = [
 ]
 
 export default function Projects() {
-  const [selectedProject, setSelectedProject] = useState(null)
-  const [showImageSearch, setShowImageSearch] = useState(false)
+ 
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
@@ -229,19 +229,22 @@ export default function Projects() {
                         </Link>
                       </Button>
                     </motion.div>
-                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                      <Button
-                        asChild
-                        variant="outline"
-                        size="sm"
-                        className="border-black text-black hover:bg-gray-50 bg-transparent transition-all duration-300"
-                      >
-                        <Link href={project.liveUrl} target="_blank">
-                          <ExternalLink className="w-4 h-4 mr-2" />
-                          Live Site
-                        </Link>
-                      </Button>
-                    </motion.div>
+                   {!project.notLive && (
+  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+    <Button
+      asChild
+      variant="outline"
+      size="sm"
+      className="border-black text-black hover:bg-gray-50 bg-transparent transition-all duration-300"
+    >
+      <Link href={project.liveUrl} target="_blank">
+        <ExternalLink className="w-4 h-4 mr-2" />
+        Live Site
+      </Link>
+    </Button>
+  </motion.div>
+)}
+
                   </div>
                 </CardContent>
               </Card>
