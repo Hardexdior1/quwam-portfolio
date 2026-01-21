@@ -32,7 +32,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex items-center space-x-3">
-            <Link href="/" className="flex items-center space-x-3">
+            <Link href="#" className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-black text-white rounded-lg flex items-center justify-center font-bold text-lg">
                 Q
               </div>
@@ -42,6 +42,7 @@ export default function Navbar() {
 
           <div className="flex items-center space-x-6">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+             <Link href="https://wa.me/+2349131114346" target="_blank" rel="noopener noreferrer">
               <Button
                 variant="ghost"
                 onClick={scrollToProjects}
@@ -49,7 +50,7 @@ export default function Navbar() {
                 // href="contact"
               >
                Contact Me
-              </Button>
+              </Button></Link>
             </motion.div>
           </div>
         </div>
